@@ -29,3 +29,30 @@ func main() {
 		fmt.Println(i)
 	}
 }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"sync"
+// )
+
+// func main() {
+// 	// use WaitGroup to ensure all the goroutines finish
+// 	var wg sync.WaitGroup
+// 	wg.Add(2)
+
+// 	// There is a race condition here because the variable
+// 	// 'i' is referenced from within the anonymous function.
+// 	// This results in the read from the goroutine racing against the
+// 	// increment of 'i' as part of the for loop.
+// 	//
+// 	for i := 0; i < 2; i++ {
+// 		go func() {
+// 			fmt.Println(i)
+// 			wg.Done()
+// 		}()
+// 	}
+
+// 	wg.Wait()
+// }
